@@ -27,9 +27,7 @@ bibliography: paper.bib
 # Summary 
  
 
-A polymer sample contains a natural degree of variation in its structure and non-uniformity between their chains, which influences the bulk material properties of the polymer. The innate heterogeneity is often disregarded in the *in silico* study of polymer systems. This paper presents ‘SwiftPol,’ a user-guided Python software for the automated generation of polydisperse polymer systems which are representative of experimental samples. 
-
-We have ensured that SwiftPol can be seamlessly integrated into existing open-source software built for parameterization and simulation, to allow the user to use their preferred force field and engines. 
+A polymer sample contains a natural degree of variation in its structure and non-uniformity between its chains, which influences the bulk material properties of the sample. This innate heterogeneity is often disregarded in the *in silico* study of a polymer system, resulting in divergence from its *in vitro* counterpart. This paper presents ‘SwiftPol,’ a user-guided Python software for the automated generation of polydisperse polymer systems which are representative of experimental samples.  
 
  
 # Statement of need 
@@ -38,7 +36,7 @@ Polymer MD simulations are often performed with uniform idealized systems that d
 
 Existing polymer MD studies showcase an assortment of approaches to manually incorporate polydispersity into their systems. However, there is not currently a software package available that effectively builds polymer systems that capture the naturally occurring heterogeneity and polydispersity. Here, we will detail our development of a user-guided python tool for building representative polymer systems, and subsequent studies to show its relevance and performance. 
 
-SwiftPol uses open-source Python libraries ‘RDkit’ and ‘Open Force Field’ to promote accessibility.  
+SwiftPol uses open-source Python libraries ‘RDkit’ and ‘Open Force Field’ to promote accessibility. We have ensured that SwiftPol can be seamlessly integrated into existing open-source software built for parameterization and simulation, to allow the user to use their preferred force field and engines.  
 
 # Package Overview 
 
