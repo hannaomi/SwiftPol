@@ -34,7 +34,7 @@ We have ensured that SwiftPol can be seamlessly integrated into existing open-so
  
 # Statement of need 
  
-Polymer MD simulations are often performed with uniform idealized systems that do not capture the heterogeneity of their experimental counterparts. The result of this misalignment is non-convergence between MD-derived polymer properties and experimental data, and these MD simulations can overlook key components of polymer physics such as polydispersity and semi-crystallinity. Studies have demonstrated that polymer material properties are highly sensitive to variations in substructure, making it essential to account for this bulk diversity in order to capture the true physics of polymer systems `[@Wan:2001]`. 
+Polymer MD simulations are often performed with uniform idealized systems that do not capture the heterogeneity of their experimental counterparts. The result of this misalignment is non-convergence between MD-derived polymer properties and experimental data, and these MD simulations can overlook key components of polymer physics such as polydispersity and semi-crystallinity. Studies have demonstrated that polymer material properties are highly sensitive to variations in substructure, making it essential to account for this bulk diversity in order to capture the true physics of polymer systems [@Wan:2001]. 
 
 Existing polymer MD studies showcase an assortment of approaches to manually incorporate polydispersity into their systems. However, there is not currently a software package available that effectively builds polymer systems that capture the naturally occurring heterogeneity and polydispersity. Here, we will detail our development of a user-guided python tool for building representative polymer systems, and subsequent studies to show its relevance and performance. 
 
@@ -46,11 +46,11 @@ The SwiftPol build module contains Python functions to build both single polymer
 
 SwiftPol takes as an input the simplified molecular-input line-entry system (SMILES) string of all monomer components in a polymer, as well as a panel of parameters representing the target average properties of the system; monomer % composition (for co-polymers), length, number of chains, blockiness (for blocky co-polymers), terminals, residual monomer. The user must define the reaction SMARTS which describes the polymerization reaction associated with their system. 
 
-As depicted in Figure 1 \autoref{fig:1}, SwiftPol generates an initial polymer sequence that fits the chain length and terminal parameters exactly, using a probability function to determine the ratio of monomers in the chain. In the case of a block co-polymer, the chain is passed to a second function which tests whether the values for blockiness and % monomer are within 10% of the input variable. The +/- 10% acceptance margin introduces polydispersity into the system by ensuring a certain level of non-uniformity between polymer chains, without straying too far from the input value. 
+As depicted in <b>\autoref{Figure 1}<b>, SwiftPol generates an initial polymer sequence that fits the chain length and terminal parameters exactly, using a probability function to determine the ratio of monomers in the chain. In the case of a block co-polymer, the chain is passed to a second function which tests whether the values for blockiness and % monomer are within 10% of the input variable. The +/- 10% acceptance margin introduces polydispersity into the system by ensuring a certain level of non-uniformity between polymer chains, without straying too far from the input value. 
 
 If all tests are passed, the chain is appended to the Python polymer system object, and the associated actual properties of the chain are calculated and added as system attributes. Otherwise, the chain is discarded, and the process is repeated. Once the system size is satisfied, average system properties are calculated using in-built SwiftPol functions. 
 
-![Flowchart showing the process of building a polymer system using SwiftPol.\label{fig:1}](Fig_1_Swiftpol.png) 
+![Flowchart showing the process of building a polymer system using SwiftPol.\label{Figure 1}](Fig_1_Swiftpol.png) 
 
 This approach allows for the generation of a polydisperse system, meaning each chain displays the same average properties but the complete system exhibits the distributions observed in experimental polymer samples. 
 
@@ -69,31 +69,31 @@ Considering key experimental properties of bulk polymer materials during *in sil
 
 SwiftPol uses the following expressions to define key polymer properties. 
 
-Monomer ratio, *R~m*, is the ratio of monomer A to monomer B in an AB co-polymer, shown in \autoref{equation 1} 
+Monomer ratio, *R~m*, is the ratio of monomer A to monomer B in an AB co-polymer, shown in <b>\autoref{equation 1}<b>.
 
 \begin{equation}\label{equation 1} 
 \mathit{R_{m}}  = \frac{n(A)}{n(A+B)} 
 \end{equation} 
 
-Degree of polymerization, DOP, is the mean polymer chain length in the system, shown in \autoref{equation 2}. 
+Degree of polymerization, DOP, is the mean polymer chain length in the system, shown in <b>\autoref{equation 2}<b>. 
 
 \begin{equation}\label{equation 2} 
 DOP = \overline{x}(nA+nB) 
 \end{equation} 
 
-Number of chains, n~chains, is the total number of chains built by SwiftPol and appended to the object, shown in \autoref{equation 3}. 
+Number of chains, n~chains, is the total number of chains built by SwiftPol and appended to the object, shown in <b>\autoref{equation 3}<b>. 
 
 \begin{equation}\label{equation 3} 
 n_{chains} = total\,number\,of\,chains\,built 
 \end{equation} 
 
-Blockiness, *b*, is a measurement of the distribution of monomers in an AB co-polymer, shown in \autoref{equation 4}. 
+Blockiness, *b*, is a measurement of the distribution of monomers in an AB co-polymer, shown in <b>\autoref{equation 4}<b>. 
 
 \begin{equation}\label{equation 4} 
 \mathit{b} = \frac{nB-B\,bonds}{nA-B\,bonds} 
 \end{equation} 
 
-Residual monomer, *M~resid*, is the % of residual monomer molecules in the system, shown in \autoref{equation 5}. 
+Residual monomer, *M~resid*, is the % of residual monomer molecules in the system, shown in <b>\autoref{equation 5}<b>. 
 
 \begin{equation}\label{equation 5} 
 \mathit{M_{resid}} = \frac{M_{w}(M_(resid))}{M_{w}(Carbon-containing\,compounds)} 
