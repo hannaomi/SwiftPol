@@ -105,15 +105,12 @@ Residual monomer, *M~resid*, is the % of residual monomer molecules in the syste
 \end{equation} 
  
 # Acknowledgements 
- 
 Hannah Turney is supported by funding contributions from UKRI Biotechnology and Biological Sciences Research Council (grant ref. BB/T008709/1) and Johnson&Johnson Innovative Medicine. 
 
- 
+We acknowledge contributions and feedback from Jeffrey Wagner at the Open Force field consortium and Anusha Lalitha, David Hahn and Gary Tresadern at Johnson&Johnson Innovative Medicine.
 
-We acknowledge contributions and feedback from Jeffrey Wagner at the Open Force field consortium and Anusha Lalitha, David Hahn and Gary Tresadern at Johnson&Johnson Innovative Medicine 
- 
+We acknowledge the use of King’s College London e-research Computational Research, Engineering and Technology Environment (CREATE) high performance computing facility in the development and testing of SwiftPol.
 # References 
 
 Wan, B. et al. (2021) ‘Effect of polymer source on in vitro drug release from PLGA microspheres’, International Journal of Pharmaceutics, 607, p. 120907. https://doi.org/10.1016/j.ijpharm.2021.120907. 
-
- 
+King's College London. (2022). King's Computational Research, Engineering and Technology Environment (CREATE). Retrieved March 2, 2022, from https://doi.org/10.18742/rnvf-m076
