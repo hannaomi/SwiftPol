@@ -25,40 +25,45 @@ bibliography: paper.bib
 --- 
  
 # Summary 
- 
 
-A polymer sample contains a natural degree of variation in its structure and non-uniformity between its chains, which influences the bulk material properties of the sample. This innate heterogeneity is often disregarded in the *in silico* study of a polymer system, resulting in divergence from its *in vitro* counterpart. This paper presents ‘SwiftPol,’ a user-guided Python software for the automated generation of polydisperse polymer systems which are representative of experimental samples.  
-
- 
-
+A polymer sample contains a natural degree of variation in its structure and non-uniformity between its chains, which influences the bulk material properties of the sample. This innate heterogeneity is often disregarded in the *in silico* study of a polymer system, resulting in divergence from its *in vitro* counterpart. This paper presents ‘SwiftPol,’ a user-guided Python software for the automated generation of polydisperse polymer systems which are representative of experimental samples. 
 
 # Statement of need 
- 
 Polymer MD simulations are often performed with uniform idealized systems that do not capture the heterogeneity of their experimental counterparts. The result of this misalignment is non-convergence between MD-derived polymer properties and experimental data, and these MD simulations can overlook key components of polymer physics such as polydispersity and semi-crystallinity. Studies have demonstrated that polymer material properties are highly sensitive to variations in substructure, making it essential to account for this bulk diversity in order to capture the true physics of polymer systems [@wan_effect_2021]. 
 
-Existing polymer MD studies showcase an assortment of approaches to manually incorporate polydispersity into their systems. However, there is not currently a software package available that effectively builds polymer systems that capture the naturally occurring heterogeneity and polydispersity. Here, we will detail our development of a user-guided python tool for building representative polymer systems, and subsequent studies to show its relevance and performance. 
 
-SwiftPol uses open-source Python libraries ‘RDkit’ and ‘Open Force Field’ to promote accessibility. We have ensured that SwiftPol can be seamlessly integrated into existing open-source software built for parameterization and simulation, to allow the user to use their preferred force field and engines.  
+Existing polymer MD studies showcase an assortment of approaches to manually incorporate polydispersity into their systems. However, there is not currently a software package available that focusses on effectively capturing the naturally occurring heterogeneity and polydispersity in real-life polymer systems. Here, we will detail the development of a user-guided python tool for building representative polymer ensembles, and subsequent studies to show its relevance and performance. 
+
+SwiftPol uses open-source Python libraries ‘RDkit’, OpenFF-interchange, and OpenFF-toolkit to promote reproducibility and portability.  We have ensured that SwiftPol can be seamlessly integrated into existing open-source software built for parameterization and simulation, to allow the user to select their preferred force field, topology format and engine.
+
 
 # Package Overview 
 
 The SwiftPol build module contains Python functions to build both single polymer chains, and polydisperse polymer systems. 
 
-SwiftPol takes as an input the simplified molecular-input line-entry system (SMILES) string of all monomer components in a polymer, as well as a panel of parameters representing the target average properties of the system; monomer % composition (for co-polymers), length, number of chains, blockiness (for blocky co-polymers), terminals, residual monomer. The user must define the reaction SMARTS which describes the polymerization reaction associated with their system. 
+SwiftPol takes as an input the simplified molecular-input line-entry system (SMILES) string of all monomer components in a polymer, as well as a list of parameters representing the target average properties of the system; monomer % composition (for co-polymers), length, number of chains, blockiness (for blocky co-polymers), terminals, residual monomer. The user must define the reaction SMARTS which describes the polymerization reaction associated with their system. 
 
-As depicted in \autoref{Figure 1}, SwiftPol generates an initial polymer sequence that fits the chain length and terminal parameters exactly, using a probability function to determine the ratio of monomers in the chain. In the case of a block co-polymer, the chain is passed to a second function which tests whether the values for blockiness and % monomer are within 10% of the input variable. The +/- 10% acceptance margin introduces polydispersity into the system by ensuring a certain level of non-uniformity between polymer chains, without straying too far from the input value. 
+As depicted in Figure 1 \autoref{Figure 1}, SwiftPol generates an initial polymer sequence that fits the chain length and terminal parameters exactly, using a probability function to determine the ratio of monomers in the chain. In the case of a block co-polymer, the chain is passed to a second function which tests whether the values for blockiness and % monomer are within 10% of the input variable. The +/- 10% acceptance margin introduces polydispersity into the system by ensuring a certain level of non-uniformity between polymer chains, without straying too far from the input value. 
 
-If all tests are passed, the chain is appended to the Python polymer system object, and the associated actual properties of the chain are calculated and added as system attributes. Otherwise, the chain is discarded, and the process is repeated. Once the system size is satisfied, average system properties are calculated using in-built SwiftPol functions. 
+If all tests are passed, the chain is appended to the Python polymer system object, and the associated properties of the chain are calculated and added as system attributes. Otherwise, the chain is discarded, and the process is repeated. Once the system size is satisfied, average system properties are calculated using in-built SwiftPol functions. 
 
-![Flowchart showing the process of building a polymer system using SwiftPol.\label{Figure 1}](Fig_1_Swiftpol.png) 
+![Flowchart showing the process of building a polymer system using SwiftPol.\label{ Figure 1}](Fig_1_Swiftpol.png) 
 
-This approach allows for the generation of a polydisperse system, meaning each chain displays the same average properties but the complete system exhibits the distributions observed in experimental polymer samples. 
+This approach allows for the generation of a polydisperse system, meaning each chain displays different properties but the ensemble matches the target properties and distribution, as is observed in experimental polymer samples. 
 
 SwiftPol also contains functions to generate conformers and assign force field parameters to the polydisperse systems. 
 
 # Applications 
 
-Using SwiftPol, we have successfully constructed polydisperse systems of poly(lactide-co-glycolide) (PLGA), a widely used biodegradable polymer. We used the molecular structures and properties of experimental PLGA products as input for SwiftPol building functions to create representative PLGA systems for molecular dynamics study. By integrating experimental data, such as chain terminals, copolymer ratios of lactic and glycolic acid, and blockiness, we have been able to replicate the bulk characteristics of various commercial polymer products, namely polydispersity. 
+Using SwiftPol, we have successfully constructed polydisperse systems of poly(lactide-co-glycolide) (PLGA), a widely used biodegradable polymer. We used the molecular structures and properties of experimental PLGA products as input for SwiftPol building functions to create representative PLGA systems to be used for molecular dynamics simulations. By integrating experimental data, such as chain terminals, copolymer ratios of lactic and glycolic acid, and blockiness, we have been able to replicate the bulk characteristics of various commercial polymer products, namely polydispersity. 
+
+
+
+# Speed Benchmarking
+We determined whether SwiftPol can build polymer ensembles and chains with sizes that are relevant to the system scales of interest by performing a stress test. \autoref{ Figure 2}, shows measurements of the time benchmarking results, illustrating that SwiftPol can build large-scale systems in a realistic time frame, and will not create a bottleneck in an MD workflow.
+
+![A) Time, t, taken to build systems with a single-chain, ranging from a 10-mer to a 1000-mer. B) Time, t, taken to 50-mer chain build systems ranging from 10 chains to 250 chains.\label{Figure 2}](Fig_2_Swiftpol.png) 
+
 
 # Conclusion 
 
