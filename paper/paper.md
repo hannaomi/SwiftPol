@@ -56,8 +56,43 @@ SwiftPol also contains functions to generate conformers and assign force field p
 # Applications 
 
 Using SwiftPol, we have successfully constructed polydisperse systems of poly(lactide-co-glycolide) (PLGA), a widely used biodegradable polymer. We used the molecular structures and properties of experimental PLGA products as input for SwiftPol building functions to create representative PLGA systems to be used for molecular dynamics simulations. By integrating experimental data, such as chain terminals, copolymer ratios of lactic and glycolic acid, and blockiness, we have been able to replicate the bulk characteristics of various commercial polymer products, namely polydispersity. 
+A full example implementation of SwiftPol for building PLGA systems can be found in the [building a PLGA system example notebook](Example_Notebooks/PLGA_demo.ipynb)
+We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA ester-terminated PLGA. Following the chain build, another SwiftPol function was used to calculate the appropriate box size for the unit cell, number of water molecules, salt molecules, and residual monomer molecules to include in the complete condensed polymer ensemble.
+The input values for the SwiftPol builder, seen in \autoref{Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al (58).
 
-An example implementation of SwiftPol for building PLGA systems can be found in the [building a PLGA system example notebook](https://github.com/matta-research-group/SwiftPol/blob/main/Example_Notebooks/PLGA_demo.ipynb)
+[Input parameters for SwiftPol PLGA builder function, for the building of product X.\label{Table 1}]
+
+| INPUT                                     | VALUE       |
+|-------------------------------------------|-------------|
+| SYSTEM SIZE                               | 3           |
+| TARGET LACTIDE PROPORTION (%)             | 75          |
+| DEGREE OF POLYMERIZATION (MONOMER)       | 50          |
+| TARGET CHAIN BLOCKINESS                   | 1.7         |
+| TERMINAL                                  | Ester       |
+| RESIDUAL MONOMER (% W/W)                 | 0.05        |
+| NACL CONCENTRATION (M)                   | 0.1         |
+
+A rendering of the above SwiftPol Output chain build, with and without the presence of water and salt ions is in seen in \autoref{Figure 2},
+
+
+![ A) Rendering of unit cell containing product X PLGA system, water, residual monomer and NaCl, B) Rendering of unit cell containing only product X PLGA system and residual monomer.\label{Figure 2}](Fig_2_Swiftpol.png) 
+
+
+The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{Table 2},
+
+
+[Table 4. SwiftPol system build attributes. x̄n = mean value of attribute across n chains.\label{Table 2}]
+
+| ATTRIBUTE                               | X̄N         |
+|-----------------------------------------|-------------|
+| SYSTEM SIZE (CHAINS)                   | 3           |
+| ACTUAL LACTIDE PROPORTION (%)           | 68.9        |
+| AVERAGE CHAIN BLOCKINESS                | 1.65        |
+| AVERAGE MOLECULE WEIGHT (DALTON)       | 3370        |
+| AVERAGE CHAIN LENGTH (MONOMERS)        | 50          |
+| POLYDISPERSITY INDEX                    | 1.68        |
+| BUILD TIME (S)                          | 1.4         |
+
 
 # Speed Benchmarking
 We determined whether SwiftPol can build polymer ensembles and chains with sizes that are relevant to the system scales of interest by performing a stress test. \autoref{ Figure 2}, shows measurements of the time benchmarking results, illustrating that SwiftPol can build large-scale systems in a realistic time frame, and will not create a bottleneck in an MD workflow.
