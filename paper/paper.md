@@ -60,7 +60,7 @@ A full example implementation of SwiftPol for building PLGA systems can be found
 We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA ester-terminated PLGA. Following the chain build, another SwiftPol function was used to calculate the appropriate box size for the unit cell, number of water molecules, salt molecules, and residual monomer molecules to include in the complete condensed polymer ensemble.
 The input values for the SwiftPol builder, seen in \autoref{Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al (58).
 
-[Input parameters for SwiftPol PLGA builder function, for the building of product X.\label{Table 1}]
+![Input parameters for SwiftPol PLGA builder function, for the building of product X.\label{Table 1}]
 
 | INPUT                                     | VALUE       |
 |-------------------------------------------|-------------|
@@ -81,7 +81,7 @@ A rendering of the above SwiftPol Output chain build, with and without the prese
 The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{Table 2},
 
 
-[Table 4. SwiftPol system build attributes. x̄n = mean value of attribute across n chains.\label{Table 2}]
+![SwiftPol system build attributes. x̄n = mean value of attribute across n chains.\label{Table 2}]
 
 | ATTRIBUTE                               | X̄N         |
 |-----------------------------------------|-------------|
@@ -97,7 +97,7 @@ The system attributes assigned by SwiftPol to the completed condensed PLGA unit 
 # Speed Benchmarking
 We determined whether SwiftPol can build polymer ensembles and chains with sizes that are relevant to the system scales of interest by performing a stress test. \autoref{ Figure 2}, shows measurements of the time benchmarking results, illustrating that SwiftPol can build large-scale systems in a realistic time frame, and will not create a bottleneck in an MD workflow.
 
-![A) Time, t, taken to build systems with a single-chain, ranging from a 10-mer to a 1000-mer. B) Time, t, taken to 50-mer chain build systems ranging from 10 chains to 250 chains.\label{Figure 2}](Fig_2_Swiftpol.png) 
+![A) Time, t, taken to build systems with a single-chain, ranging from a 10-mer to a 1000-mer. B) Time, t, taken to 50-mer chain build systems ranging from 10 chains to 250 chains.\label{Figure 3}](Fig_3_Swiftpol.png) 
 
 
 # Conclusion 
