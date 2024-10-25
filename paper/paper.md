@@ -57,7 +57,7 @@ SwiftPol also contains functions to generate conformers and assign force field p
 
 Using SwiftPol, we have successfully constructed polydisperse systems of poly(lactide-co-glycolide) (PLGA), a widely used biodegradable polymer. We used the molecular structures and properties of experimental PLGA products as input for SwiftPol building functions to create representative PLGA systems to be used for molecular dynamics simulations. By integrating experimental data, such as chain terminals, copolymer ratios of lactic and glycolic acid, and blockiness, we have been able to replicate the bulk characteristics of various commercial polymer products, namely polydispersity. 
 
-
+An example implementation of SwiftPol for building PLGA systems can be found in the [building a PLGA system example notebook](https://github.com/matta-research-group/SwiftPol/blob/main/Example_Notebooks/PLGA_demo.ipynb)
 
 # Speed Benchmarking
 We determined whether SwiftPol can build polymer ensembles and chains with sizes that are relevant to the system scales of interest by performing a stress test. \autoref{ Figure 2}, shows measurements of the time benchmarking results, illustrating that SwiftPol can build large-scale systems in a realistic time frame, and will not create a bottleneck in an MD workflow.
