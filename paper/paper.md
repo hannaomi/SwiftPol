@@ -62,25 +62,41 @@ Using SwiftPol, we have successfully constructed polydisperse systems of poly(la
 A full example implementation of SwiftPol for building PLGA systems can be found in the [building a PLGA system example notebook](Example_Notebooks/PLGA_demo.ipynb).
 
 We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA ester-terminated PLGA. Following the chain build, another SwiftPol function was used to calculate the appropriate box size for the unit cell, number of water molecules, salt molecules, and residual monomer molecules to include in the complete condensed polymer ensemble.
-The input values for the SwiftPol builder, seen in Table 1\autoref{"Table 1"}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
+The input values for the SwiftPol builder, seen in Table \ref{Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
 
 
 
 [Table 1. Input parameters for SwiftPol PLGA builder function, for the building of product X.]{label="Table 1"}
-<div style="float: left; margin-right: 20px;">
 
-| INPUT                                     | VALUE       |
-|-------------------------------------------|-------------|
-| SYSTEM SIZE                               | 3           |
-| TARGET LACTIDE PROPORTION (%)             | 75          |
-| DEGREE OF POLYMERIZATION (MONOMER)       | 50          |
-| TARGET CHAIN BLOCKINESS                   | 1.7         |
-| TERMINAL                                  | Ester       |
-| RESIDUAL MONOMER (% W/W)                 | 0.05        |
-| NACL CONCENTRATION (M)                   | 0.1         |
-</div>
 
-The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in Table 2\autoref{"Table 2"},
+\begin{flushleft}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{INPUT} & \textbf{VALUE} \\
+\hline
+SYSTEM SIZE & 3 \\
+\hline
+TARGET LACTIDE PROPORTION (\%) & 75 \\
+\hline
+DEGREE OF POLYMERIZATION (MONOMER) & 50 \\
+\hline
+TARGET CHAIN BLOCKINESS & 1.7 \\
+\hline
+TERMINAL & Ester \\
+\hline
+RESIDUAL MONOMER (\% W/W) & 0.05 \\
+\hline
+NACL CONCENTRATION (M) & 0.1 \\
+\hline
+\end{tabular}
+\caption{Sample Data Table}
+\label{tab:Table 1}
+\end{table}
+\end{flushleft}
+
+The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in Table 2\autoref{Table 2},
 
 
 [Table 2. SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]{label="Table 2"}
