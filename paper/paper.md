@@ -68,30 +68,24 @@ The input values for the SwiftPol builder, seen in \autoref{tab:Table 1}, were t
 \begin{flushleft}
 \begin{table}[h!]
 \caption{Input parameters for SwiftPol PLGA builder function, for the building of product X.}
-\centering
 \begin{tabular}{|l|l|}
 \hline
 \textbf{INPUT} & \textbf{VALUE} \\
 \hline
 \hline
 SYSTEM SIZE & 3 \\
-\hline
 TARGET LACTIDE PROPORTION (\%) & 75 \\
-\hline
 DEGREE OF POLYMERIZATION (MONOMER) & 50 \\
-\hline
 TARGET CHAIN BLOCKINESS & 1.7 \\
-\hline
 TERMINAL & Ester \\
-\hline
 RESIDUAL MONOMER (\% W/W) & 0.05 \\
-\hline
 NACL CONCENTRATION (M) & 0.1 \\
 \hline
 \end{tabular}
 \label{tab:Table 1}
 \end{table}
-\end{flushleft}
+\end{flushleft}
+
 
 The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{tab:Table 2},
 
@@ -99,24 +93,17 @@ The system attributes assigned by SwiftPol to the completed condensed PLGA unit 
 \begin{flushleft}
 \begin{table}[h!]
 \caption{SwiftPol system build attributes. x̄n = mean value of attribute across n chains.}
-\centering
 \begin{tabular}{|l|l|}
 \hline
 \textbf{ATTRIBUTE} & \textbf{X̄N } \\
 \hline
 \hline
 SYSTEM SIZE (CHAINS) & 3 \\
-\hline
 ACTUAL LACTIDE PROPORTION (\%) & 68.9 \\
-\hline
 AVERAGE CHAIN BLOCKINESS & 1.65 \\
-\hline
 AVERAGE MOLECULE WEIGHT (DALTON) & 3370 \\
-\hline
 AVERAGE CHAIN LENGTH (MONOMERS) & 50 \\
-\hline
 POLYDISPERSITY INDEX  & 1.68 \\
-\hline
 BUILD TIME (S)  & 1.4 \\
 \hline
 \end{tabular}
@@ -185,16 +172,29 @@ We acknowledge the use of King’s College London e-research Computational Resea
 # References 
 
 Andrews, J., Handler, R.A. and Blaisten-Barojas, E. (2020) ‘Structure, energetics and thermodynamics of PLGA condensed phases from Molecular Dynamics’, Polymer, 206, p. 122903. Available at: https://doi.org/10.1016/j.polymer.2020.122903.
+
 Davel, C.M. et al. (2024) ‘Parameterization of General Organic Polymers within the Open Force Field Framework’, Journal of Chemical Information and Modeling [Preprint]. Available at: https://doi.org/10.1021/acs.jcim.3c01691.
+
 Kawagoe, Y. et al. (2019) ‘Construction of polydisperse polymer model and investigation of heat conduction: A molecular dynamics study of linear and branched polyethylenimine’, Polymer, 180, p. 121721. Available at: https://doi.org/10.1016/j.polymer.2019.121721.
+
 King's College London. (2024). King's Computational Research, Engineering and Technology Environment (CREATE). Retrieved October 28, 2024, from https://doi.org/10.18742/rnvf-m076
+
 Klein, C. et al. (2016) ‘A Hierarchical, Component Based Approach to Screening Properties of Soft Matter’, in R.Q. Snurr, C.S. Adjiman, and D.A. Kofke (eds) Foundations of Molecular Modeling and Simulation: Select Papers from FOMMS 2015. Singapore: Springer, pp. 79–92. Available at: https://doi.org/10.1007/978-981-10-1128-3_5.
+
 Landrum, G. et al. (2024) ‘rdkit/rdkit: 2024_09_2 (Q3 2024) Release’. Zenodo. Available at: https://doi.org/10.5281/zenodo.13990314.
+
 ROCS 3.6.2.0. OpenEye, Cadence Molecular Sciences, Santa Fe, NM. http://www.eyesopen.com.
+
 Santana-Bonilla, A. et al. (2023) ‘Modular Software for Generating and Modeling Diverse Polymer Databases’, Journal of Chemical Information and Modeling, 63(12), pp. 3761–3771. Available at: https://doi.org/10.1021/acs.jcim.3c00081.
+
 Schmid, F. (2023) ‘Understanding and Modeling Polymers: The Challenge of Multiple Scales’, ACS Polymers Au, 3(1), pp. 28–58. Available at: https://doi.org/10.1021/acspolymersau.2c00049.
+
 Stipa, P. et al. (2021) ‘Molecular dynamics simulations of quinine encapsulation into biodegradable nanoparticles: A possible new strategy against Sars-CoV-2’, European Polymer Journal, 158, p. 110685. Available at: https://doi.org/10.1016/j.eurpolymj.2021.110685.
+
 Thompson, M. et al. (2024) ‘OpenFF Interchange’. Zenodo. Available at: https://doi.org/10.5281/zenodo.11389943.
+
 Wagner, J. et al. (2024) ‘openforcefield/openff-toolkit: 0.16.0 Minor feature and bugfix release’. Zenodo. Available at: https://doi.org/10.5281/zenodo.10967071.
+
 Wan, B. et al. (2021) ‘Effect of polymer source on in vitro drug release from PLGA microspheres’, International Journal of Pharmaceutics, 607, p. 120907. Available at: https://doi.org/10.1016/j.ijpharm.2021.120907.
+
 Wang, L. et al. (2024) ‘The Open Force Field Initiative: Open Software and Open Science for Molecular Modeling’, The Journal of Physical Chemistry B, 128(29), pp. 7043–7067. Available at: https://doi.org/10.1021/acs.jpcb.4c01558.
