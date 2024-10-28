@@ -65,10 +65,10 @@ We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA 
 The input values for the SwiftPol builder, seen in \autoref{Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
 
 
-[Input parameters for SwiftPol PLGA builder function, for the building of product X.]\label{tab:Table 1}
+Input parameters for SwiftPol PLGA builder function, for the building of product X.[]{label=Table 1}
 
 | INPUT                                     | VALUE       |
-+:-------------------------------------------:+:-------------:+
+|-------------------------------------------|-------------|
 | SYSTEM SIZE                               | 3           |
 | TARGET LACTIDE PROPORTION (%)             | 75          |
 | DEGREE OF POLYMERIZATION (MONOMER)       | 50          |
@@ -81,10 +81,10 @@ The input values for the SwiftPol builder, seen in \autoref{Table 1}, were taken
 The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{Table 2},
 
 
-[SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]\label{Table 2}
+[SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]{label=Table 2}
 
 | ATTRIBUTE                               | X̄N         |
-+:-----------------------------------------:+:-------------:+
+|-----------------------------------------|-------------|
 | SYSTEM SIZE (CHAINS)                   | 3           |
 | ACTUAL LACTIDE PROPORTION (%)           | 68.9        |
 | AVERAGE CHAIN BLOCKINESS                | 1.65        |
