@@ -62,15 +62,12 @@ Using SwiftPol, we have successfully constructed polydisperse systems of poly(la
 A full example implementation of SwiftPol for building PLGA systems can be found in the [building a PLGA system example notebook](Example_Notebooks/PLGA_demo.ipynb).
 
 We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA ester-terminated PLGA. Following the chain build, another SwiftPol function was used to calculate the appropriate box size for the unit cell, number of water molecules, salt molecules, and residual monomer molecules to include in the complete condensed polymer ensemble.
-The input values for the SwiftPol builder, seen in Table \ref{Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
-
-
-
-[Table 1. Input parameters for SwiftPol PLGA builder function, for the building of product X.]{label="Table 1"}
+The input values for the SwiftPol builder, seen in Table \ref{tab:Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
 
 
 \begin{flushleft}
 \begin{table}[h!]
+\caption{Input parameters for SwiftPol PLGA builder function, for the building of product X.}
 \centering
 \begin{tabular}{|l|l|}
 \hline
@@ -91,7 +88,6 @@ RESIDUAL MONOMER (\% W/W) & 0.05 \\
 NACL CONCENTRATION (M) & 0.1 \\
 \hline
 \end{tabular}
-\caption{Sample Data Table}
 \label{tab:Table 1}
 \end{table}
 \end{flushleft}
