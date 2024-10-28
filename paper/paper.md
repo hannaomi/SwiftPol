@@ -67,7 +67,7 @@ The input values for the SwiftPol builder, seen in Table 1\autoref{"Table 1"}, w
 
 
 [Table 1. Input parameters for SwiftPol PLGA builder function, for the building of product X.]{label="Table 1"}
-<div class="table-left">
+<div style="float: left; margin-right: 20px;">
 
 | INPUT                                     | VALUE       |
 |-------------------------------------------|-------------|
@@ -84,7 +84,7 @@ The system attributes assigned by SwiftPol to the completed condensed PLGA unit 
 
 
 [Table 2. SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]{label="Table 2"}
-<div class="table-left">
+<div style="float: left; margin-right: 20px;">
 
 | ATTRIBUTE                               | X̄N         |
 |-----------------------------------------|-------------|
