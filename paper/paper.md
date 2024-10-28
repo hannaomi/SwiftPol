@@ -73,6 +73,7 @@ The input values for the SwiftPol builder, seen in Table \ref{tab:Table 1}, were
 \hline
 \textbf{INPUT} & \textbf{VALUE} \\
 \hline
+\hline
 SYSTEM SIZE & 3 \\
 \hline
 TARGET LACTIDE PROPORTION (\%) & 75 \\
@@ -96,18 +97,46 @@ The system attributes assigned by SwiftPol to the completed condensed PLGA unit 
 
 
 [Table 2. SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]{label="Table 2"}
-<div style="float: left; margin-right: 20px;">
 
-| ATTRIBUTE                               | X̄N         |
-|-----------------------------------------|-------------|
-| SYSTEM SIZE (CHAINS)                   | 3           |
-| ACTUAL LACTIDE PROPORTION (%)           | 68.9        |
-| AVERAGE CHAIN BLOCKINESS                | 1.65        |
-| AVERAGE MOLECULE WEIGHT (DALTON)       | 3370        |
-| AVERAGE CHAIN LENGTH (MONOMERS)        | 50          |
-| POLYDISPERSITY INDEX                    | 1.68        |
-| BUILD TIME (S)                          | 1.4         |
-</div>
+
+\documentclass{article}
+\usepackage{amsmath}  % For X̄N (bar over X)
+\usepackage{hyperref} % For hyperlinks (if needed)
+
+\begin{document}
+
+Here is some introductory text that leads into the table. The data in Table~\ref{tab:attributes} provides important information about the attributes.
+
+\begin{flushleft}
+    \renewcommand{\arraystretch}{1.2} % Adjust row height for readability
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{ATTRIBUTE} & \textbf{$\bar{X}_N$} \\ % X̄N with bar
+        \hline
+        \hline % Double line after the header
+        SYSTEM SIZE (CHAINS) & 3 \\
+        \hline
+        ACTUAL LACTIDE PROPORTION (\%) & 68.9 \\
+        \hline
+        AVERAGE CHAIN BLOCKINESS & 1.65 \\
+        \hline
+        AVERAGE MOLECULE WEIGHT (DALTON) & 3370 \\
+        \hline
+        AVERAGE CHAIN LENGTH (MONOMERS) & 50 \\
+        \hline
+        POLYDISPERSITY INDEX & 1.68 \\
+        \hline
+        BUILD TIME (S) & 1.4 \\
+        \hline
+    \end{tabular}
+    \caption{Attributes and Corresponding Values}
+    \label{tab:attributes}
+\end{flushleft}
+
+Continuing with the text, we can interpret the values and understand the context better...
+
+\end{document}
+
 
 
 # Speed Benchmarking
