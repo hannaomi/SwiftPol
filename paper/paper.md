@@ -62,7 +62,7 @@ Using SwiftPol, we have successfully constructed polydisperse systems of poly(la
 A full example implementation of SwiftPol for building PLGA systems can be found in the [building a PLGA system example notebook](Example_Notebooks/PLGA_demo.ipynb).
 
 We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA ester-terminated PLGA. Following the chain build, another SwiftPol function was used to calculate the appropriate box size for the unit cell, number of water molecules, salt molecules, and residual monomer molecules to include in the complete condensed polymer ensemble.
-The input values for the SwiftPol builder, seen in Table \ref{tab:Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
+The input values for the SwiftPol builder, seen in Table \autoref{tab:Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
 
 
 \begin{flushleft}
@@ -93,50 +93,38 @@ NACL CONCENTRATION (M) & 0.1 \\
 \end{table}
 \end{flushleft}
 
-The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in Table 2\autoref{Table 2},
+The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in Table 2\autoref{tab:Table 2},
 
-
-[Table 2. SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]{label="Table 2"}
-
-
-\documentclass{article}
-\usepackage{amsmath}  % For X̄N (bar over X)
-\usepackage{hyperref} % For hyperlinks (if needed)
-
-\begin{document}
-
-Here is some introductory text that leads into the table. The data in Table~\ref{tab:attributes} provides important information about the attributes.
 
 \begin{flushleft}
-    \renewcommand{\arraystretch}{1.2} % Adjust row height for readability
-    \begin{tabular}{|l|l|}
-        \hline
-        \textbf{ATTRIBUTE} & \textbf{$\bar{X}_N$} \\ % X̄N with bar
-        \hline
-        \hline % Double line after the header
-        SYSTEM SIZE (CHAINS) & 3 \\
-        \hline
-        ACTUAL LACTIDE PROPORTION (\%) & 68.9 \\
-        \hline
-        AVERAGE CHAIN BLOCKINESS & 1.65 \\
-        \hline
-        AVERAGE MOLECULE WEIGHT (DALTON) & 3370 \\
-        \hline
-        AVERAGE CHAIN LENGTH (MONOMERS) & 50 \\
-        \hline
-        POLYDISPERSITY INDEX & 1.68 \\
-        \hline
-        BUILD TIME (S) & 1.4 \\
-        \hline
-    \end{tabular}
-    \caption{Attributes and Corresponding Values}
-    \label{tab:attributes}
+\begin{table}[h!]
+\caption{SwiftPol system build attributes. x̄n = mean value of attribute across n chains.}
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{ATTRIBUTE} & \textbf{X̄N } \\
+\hline
+\hline
+SYSTEM SIZE (CHAINS) & 3 \\
+\hline
+ACTUAL LACTIDE PROPORTION (\%) & 68.9 \\
+\hline
+AVERAGE CHAIN BLOCKINESS & 1.65 \\
+\hline
+AVERAGE MOLECULE WEIGHT (DALTON) & 3370 \\
+\hline
+AVERAGE CHAIN LENGTH (MONOMERS) & 50 \\
+\hline
+POLYDISPERSITY INDEX  & 1.68 \\
+\hline
+BUILD TIME (S)  & 1.4 \\
+\hline
+\end{tabular}
+\label{tab:Table 2}
+\end{table}
 \end{flushleft}
 
-Continuing with the text, we can interpret the values and understand the context better...
 
-\end{document}
-
 
 
 # Speed Benchmarking
