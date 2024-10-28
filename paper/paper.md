@@ -66,33 +66,37 @@ The input values for the SwiftPol builder, seen in \autoref{tab:Table 1}, were t
 
 
 [Input parameters for SwiftPol PLGA builder function, for the building of product X.]\label{tab:Table 1}
-
+<p align="left">
++-------------------------------------------+-------------+
 | INPUT                                     | VALUE       |
-|-------------------------------------------|-------------|
++:=========================================:+:===========:+
 | SYSTEM SIZE                               | 3           |
 | TARGET LACTIDE PROPORTION (%)             | 75          |
-| DEGREE OF POLYMERIZATION (MONOMER)       | 50          |
+| DEGREE OF POLYMERIZATION (MONOMER)        | 50          |
 | TARGET CHAIN BLOCKINESS                   | 1.7         |
 | TERMINAL                                  | Ester       |
-| RESIDUAL MONOMER (% W/W)                 | 0.05        |
-| NACL CONCENTRATION (M)                   | 0.1         |
-
+| RESIDUAL MONOMER (% W/W)                  | 0.05        |
+| NACL CONCENTRATION (M)                    | 0.1         |
++===========================================+=============+
+</p>
 
-The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \ref{tab:Table 2},
+The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{tab:Table 2},
 
 
-[SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]\label{tab:Table 2}
-
-| ATTRIBUTE                               | X̄N         |
-|-----------------------------------------|-------------|
-| SYSTEM SIZE (CHAINS)                   | 3           |
+\begin{flushleft}
+\begin{table}[h]
++-----------------------------------------+-------------+
+| ATTRIBUTE                               | X̄N          |
++:=======================================:+:===========:+
+| SYSTEM SIZE (CHAINS)                    | 3           |
 | ACTUAL LACTIDE PROPORTION (%)           | 68.9        |
 | AVERAGE CHAIN BLOCKINESS                | 1.65        |
-| AVERAGE MOLECULE WEIGHT (DALTON)       | 3370        |
-| AVERAGE CHAIN LENGTH (MONOMERS)        | 50          |
+| AVERAGE MOLECULE WEIGHT (DALTON)        | 3370        |
+| AVERAGE CHAIN LENGTH (MONOMERS)         | 50          |
 | POLYDISPERSITY INDEX                    | 1.68        |
 | BUILD TIME (S)                          | 1.4         |
-
++=========================================+=============+\caption{SwiftPol system build attributes. x̄n = mean value of attribute across n chains.}
+\label{tab:Table 2}
 
 
 # Speed Benchmarking
