@@ -62,10 +62,10 @@ Using SwiftPol, we have successfully constructed polydisperse systems of poly(la
 A full example implementation of SwiftPol for building PLGA systems can be found in the [building a PLGA system example notebook](Example_Notebooks/PLGA_demo.ipynb).
 
 We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA ester-terminated PLGA. Following the chain build, another SwiftPol function was used to calculate the appropriate box size for the unit cell, number of water molecules, salt molecules, and residual monomer molecules to include in the complete condensed polymer ensemble.
-The input values for the SwiftPol builder, seen in \autoref{Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
+The input values for the SwiftPol builder, seen in \autoref{"Table 1"}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
 
 
-Input parameters for SwiftPol PLGA builder function, for the building of product X.[]{"label=Table 1"}
+[Table 1. Input parameters for SwiftPol PLGA builder function, for the building of product X.]{label="Table 1"}
 
 | INPUT                                     | VALUE       |
 |-------------------------------------------|-------------|
@@ -78,10 +78,10 @@ Input parameters for SwiftPol PLGA builder function, for the building of product
 | NACL CONCENTRATION (M)                   | 0.1         |
 
 
-The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{Table 2},
+The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{"Table 2"},
 
 
-[SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]{label="Table 2"}
+[Table 2. SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]{label="Table 2"}
 
 | ATTRIBUTE                               | X̄N         |
 |-----------------------------------------|-------------|
