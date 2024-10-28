@@ -30,8 +30,10 @@ A polymer sample contains a natural degree of variation in its structure and non
 
 # Statement of need 
 Polymer MD simulations are often performed with uniform idealized systems that do not capture the heterogeneity of their experimental counterparts. The result of this misalignment is non-convergence between MD-derived polymer properties and experimental data, and these MD simulations can overlook key components of polymer physics such as polydispersity and semi-crystallinity  [@schmid_understanding_2023]. Studies have demonstrated that polymer material properties are highly sensitive to variations in substructure, making it essential to account for this bulk diversity in order to capture the true physics of polymer systems [@wan_effect_2021]. 
+
 Existing polymer MD studies showcase an assortment of approaches to manually incorporate polydispersity into their polymer chain builds [@andrews_structure_2020; @kawagoe_construction_2019; @stipa_molecular_2021]. Although effective for their associated applications, these manual approaches are not universally applicable methods for introducing polydispersity into molecular dynamics systems or are performed using proprietary software.
 Open source software packages designed to build *in silico* polymer systems are focused on the design of polymers at the monomer and single-chain scale [@davel_parameterization_2024; @klein_hierarchical_2016; @santana-bonilla_modular_2023]. However, there is not currently a software package available that integrates these smaller scale characteristics into *in silico* polymer design, whilst also effectively capturing the naturally occurring heterogeneity and polydispersity in real-life polymer systems. The development of SwiftPol was driven by the need to fill this gap in multi-scale building functionality of existing polymer building packages, to enable our work modelling of the behavior of bulk polymer systems.
+
 Here, we will detail the development of SwiftPol - a user-guided python tool for building representative polymer ensembles, and subsequent studies to show its relevance and performance. 
 
 SwiftPol uses open-source Python libraries ‘RDkit’, OpenFF-interchange, and OpenFF-toolkit to promote reproducibility and portability [@landrum_rdkitrdkit_2024; @thompson_openff_2024; @wagner_openforcefieldopenff-toolkit_2024; @wang_open_2024].  We have ensured that SwiftPol can be seamlessly integrated into existing open-source software built for parameterization and simulation, to allow the user to select their preferred force field, topology format and engine.
@@ -43,7 +45,7 @@ The SwiftPol build module contains Python functions to build both single polymer
 
 SwiftPol takes as an input the simplified molecular-input line-entry system (SMILES) string of all monomer components in a polymer, as well as a list of parameters representing the target average properties of the ensemble; monomer % composition (for co-polymers), length, number of chains, blockiness (for blocky co-polymers), terminals, residual monomer. The user must define the reaction SMARTS which describes the polymerization reaction associated with their polymer chemistry. 
 
-As depicted in Figure 1 \autoref{Figure 1}, SwiftPol generates an initial polymer sequence that fits the chain length and terminal parameters exactly, using a probability function to determine the ratio of monomers in the chain. In the case of a block co-polymer, the chain is passed to a second function which tests whether the values for blockiness and % monomer are within 10% of the input variable. The +/- 10% acceptance margin introduces polydispersity into the ensemble by ensuring a certain level of non-uniformity between polymer chains, without straying too far from the input value. 
+As depicted in \autoref{Figure 1}, SwiftPol generates an initial polymer sequence that fits the chain length and terminal parameters exactly, using a probability function to determine the ratio of monomers in the chain. In the case of a block co-polymer, the chain is passed to a second function which tests whether the values for blockiness and % monomer are within 10% of the input variable. The +/- 10% acceptance margin introduces polydispersity into the ensemble by ensuring a certain level of non-uniformity between polymer chains, without straying too far from the input value. 
 
 If all tests are passed, the chain is appended to the Python polymer ensemble build object, and the associated properties of the chain are calculated and added as ensemble attributes. Otherwise, the chain is discarded, and the process is repeated. Once the ensemble size is satisfied, average properties are calculated using in-built SwiftPol functions. 
 
@@ -60,10 +62,10 @@ Using SwiftPol, we have successfully constructed polydisperse systems of poly(la
 A full example implementation of SwiftPol for building PLGA systems can be found in the [building a PLGA system example notebook](Example_Notebooks/PLGA_demo.ipynb).
 
 We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA ester-terminated PLGA. Following the chain build, another SwiftPol function was used to calculate the appropriate box size for the unit cell, number of water molecules, salt molecules, and residual monomer molecules to include in the complete condensed polymer ensemble.
-The input values for the SwiftPol builder, seen in \autoref{Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
+The input values for the SwiftPol builder, seen in \autoref{tab:Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
 
 
-[Input parameters for SwiftPol PLGA builder function, for the building of product X.]\label{Table 1}
+[Input parameters for SwiftPol PLGA builder function, for the building of product X.]\label{tab:Table 1}
 
 | INPUT                                     | VALUE       |
 |-------------------------------------------|-------------|
@@ -76,10 +78,10 @@ The input values for the SwiftPol builder, seen in \autoref{Table 1}, were taken
 | NACL CONCENTRATION (M)                   | 0.1         |
 
 
-The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{Table 2},
+The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \ref{tab:Table 2},
 
 
-[SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]\label{Table 2}
+[SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]\label{tab:Table 2}
 
 | ATTRIBUTE                               | X̄N         |
 |-----------------------------------------|-------------|
