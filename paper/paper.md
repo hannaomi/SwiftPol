@@ -82,9 +82,10 @@ The input values for the SwiftPol builder, seen in \autoref{tab:Table 1}, were t
 
 The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{tab:Table 2},
 
+[SwiftPol system build attributes. x̄n = mean value of attribute across n chains.]
+\label{tab:Table 2}
 
-\begin{flushleft}
-\begin{table}[h]
+<p align="left">
 +-----------------------------------------+-------------+
 | ATTRIBUTE                               | X̄N          |
 +:=======================================:+:===========:+
@@ -95,8 +96,7 @@ The system attributes assigned by SwiftPol to the completed condensed PLGA unit 
 | AVERAGE CHAIN LENGTH (MONOMERS)         | 50          |
 | POLYDISPERSITY INDEX                    | 1.68        |
 | BUILD TIME (S)                          | 1.4         |
-+=========================================+=============+\caption{SwiftPol system build attributes. x̄n = mean value of attribute across n chains.}
-\label{tab:Table 2}
++=========================================+=============+</p>
 
 
 # Speed Benchmarking
