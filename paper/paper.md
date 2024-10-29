@@ -63,8 +63,8 @@ The input values for the SwiftPol builder, seen in \autoref{tab:Table 1}, were t
 
 \begin{flushleft}
 \begin{table}[h!]
-\caption{Input parameters for SwiftPol PLGA builder function, for the building of product X.}
 \captionsetup{justification=raggedright,singlelinecheck=false}
+\caption{Input parameters for SwiftPol PLGA builder function, for the building of product X.}
 \begin{tabular}{|l|l|}
 \hline
 \textbf{INPUT} & \textbf{VALUE} \\
@@ -89,8 +89,8 @@ The system attributes assigned by SwiftPol to the completed condensed PLGA unit 
 
 \begin{flushleft}
 \begin{table}[h!]
-\caption{SwiftPol system build attributes. x̄n = mean value of attribute across n chains.}
 \captionsetup{justification=raggedright,singlelinecheck=false}
+\caption{SwiftPol system build attributes. x̄n = mean value of attribute across n chains.}
 \begin{tabular}{|l|l|}
 \hline
 \textbf{ATTRIBUTE} & \textbf{X̄N } \\
@@ -111,7 +111,9 @@ BUILD TIME (S)  & 1.4 \\
 
 # Speed Benchmarking
 We determined whether SwiftPol can build polymer ensembles and chains with sizes that are relevant to the system scales of interest by performing a stress test. \autoref{Figure 2} shows measurements of the time benchmarking results, illustrating that SwiftPol can build large-scale systems in a realistic time frame, and will not create a bottleneck in a MD workflow.
-![ A) Time, t, taken to build systems with a single-chain, ranging from a 10-mer to a 1000-mer. B) Time, t, taken to 50-mer chain build systems ranging from 10 chains to 250 chains.\label{Figure 2}](Fig_2_Swiftpol.png) 
+
+
+![A) Time, t, taken to build systems with a single-chain, ranging from a 10-mer to a 1000-mer. B) Time, t, taken to 50-mer chain build systems ranging from 10 chains to 250 chains.\label{Figure 2}](Fig_2_Swiftpol.png) 
 
 
 # Conclusion 
@@ -151,26 +153,46 @@ Residual monomer, *M~resid*, is the % of residual monomer molecules in the syste
 \begin{equation}\label{equation 5} 
 \mathit{M_{resid}} = \frac{M_{w}(M_(resid))}{M_{w}(Carbon-containing\,compounds)} 
 \end{equation} 
+
 # Acknowledgements 
+
 Hannah Turney is supported by funding contributions from the UKRI Biotechnology and Biological Sciences Research Council (grant ref. BB/T008709/1) and Johnson&Johnson Innovative Medicine. 
 We acknowledge contributions and feedback from Jeffrey Wagner at the Open Force field consortium and Anusha Lalitha, David Hahn, and Gary Tresadern at Johnson&Johnson Innovative Medicine.
 We acknowledge the use of King’s College London e-research Computational Research, Engineering and Technology Environment (CREATE) high-performance computing facility in the development and testing of SwiftPol.
+
 # References 
+
 Andrews, J.; Handler, R. A.; Blaisten-Barojas, E. Structure, Energetics and Thermodynamics of PLGA Condensed Phases from Molecular Dynamics. Polymer 2020, 206, 122903. https://doi.org/10.1016/j.polymer.2020.122903.
+
 Davel, C. M.; Bernat, T.; Wagner, J. R.; Shirts, M. R. Parameterization of General Organic Polymers within the Open Force Field Framework. J. Chem. Inf. Model. 2024. https://doi.org/10.1021/acs.jcim.3c01691.
+
 Hawkins, P. C. D.; Skillman, A. G.; Nicholls, A. Comparison of Shape-Matching and Docking as Virtual Screening Tools. J Med Chem 2007, 50 (1), 74–82. https://doi.org/10.1021/jm0603365.
+
 Kawagoe, Y.; Surblys, D.; Matsubara, H.; Kikugawa, G.; Ohara, T. Construction of Polydisperse Polymer Model and Investigation of Heat Conduction: A Molecular Dynamics Study of Linear and Branched Polyethylenimine. Polymer 2019, 180, 121721. https://doi.org/10.1016/j.polymer.2019.121721.
+
 King's College London. (2024). King's Computational Research, Engineering and Technology Environment (CREATE). Retrieved October 28, 2024, https://doi.org/10.18742/rnvf-m076
+
 Klein, C.; Sallai, J.; Jones, T. J.; Iacovella, C. R.; McCabe, C.; Cummings, P. T. A Hierarchical, Component Based Approach to Screening Properties of Soft Matter. In Foundations of Molecular Modeling and Simulation: Select Papers from FOMMS 2015; Snurr, R. Q., Adjiman, C. S., Kofke, D. A., Eds.; Springer: Singapore, 2016; pp 79–92. https://doi.org/10.1007/978-981-10-1128-3_5.
+
 Landrum, G.; Tosco, P.; Kelley, B.; Rodriguez, R.; Cosgrove, D.; Vianello, R.; sriniker; Gedeck, P.; Jones, G.; NadineSchneider; Kawashima, E.; Nealschneider, D.; Dalke, A.; Swain, M.; Cole, B.; Turk, S.; Savelev, A.; Vaucher, A.; Wójcikowski, M.; Take, I.; Scalfani, V. F.; Walker, R.; Probst, D.; Ujihara, K.; tadhurst-cdd; Pahl, A.; godin, guillaume; Lehtivarjo, J.; Bérenger, F.; Bisson, J. Rdkit/Rdkit: 2024_09_2 (Q3 2024) Release, 2024. https://doi.org/10.5281/zenodo.13990314.
+
 Li, S.-J.; Xie, S.-J.; Li, Y.-C.; Qian, H.-J.; Lu, Z.-Y. Influence of Molecular-Weight Polydispersity on the Glass Transition of Polymers. Physical Review E 2016, 93. https://doi.org/10.1103/PhysRevE.93.012613.
+
 Ochi, M.; Wan, B.; Bao, Q.; Burgess, D. J. Influence of PLGA Molecular Weight Distribution on Leuprolide Release from Microspheres. International Journal of Pharmaceutics 2021, 599, 120450. https://doi.org/10.1016/j.ijpharm.2021.120450.
+
 Santana-Bonilla, A.; López-Ríos de Castro, R.; Sun, P.; Ziolek, R. M.; Lorenz, C. D. Modular Software for Generating and Modeling Diverse Polymer Databases. J. Chem. Inf. Model. 2023, 63 (12), 3761–3771. https://doi.org/10.1021/acs.jcim.3c00081.
+
 Schmid, F. Understanding and Modeling Polymers: The Challenge of Multiple Scales. ACS Polym. Au 2023, 3 (1), 28–58. https://doi.org/10.1021/acspolymersau.2c00049.
+
 Stipa, P.; Marano, S.; Galeazzi, R.; Minnelli, C.; Laudadio, E. Molecular Dynamics Simulations of Quinine Encapsulation into Biodegradable Nanoparticles: A Possible New Strategy against Sars-CoV-2. European Polymer Journal 2021, 158, 110685. https://doi.org/10.1016/j.eurpolymj.2021.110685.
+
 Sun, J.; Walker, J.; Beck-Broichsitter, M.; Schwendeman, S. P. Characterization of Commercial PLGAs by NMR Spectroscopy. Drug Deliv Transl Res 2022, 12 (3), 720–729. https://doi.org/10.1007/s13346-021-01023-3.
+
 Thompson, M.; Wagner, J.; Gilmer, J. B.; Timalsina, U.; Quach, C. D.; Boothroyd, S.; Mitchell, J. A. OpenFF Interchange, 2024. https://doi.org/10.5281/zenodo.11389943.
+
 Wagner, J.; Thompson, M.; Mobley, D. L.; Chodera, J.; Bannan, C.; Rizzi, A.; trevorgokey; Dotson, D. L.; Mitchell, J. A.; jaimergp; Camila; Behara, P.; Bayly, C.; JoshHorton; Pulido, I.; Wang, L.; Lim, V.; Sasmal, S.; SimonBoothroyd; Dalke, A.; Smith, D.; Westbrook, B.; Horton, J.; Wang, L.-P.; Gowers, R.; Zhao, Z.; Davel, C.; Zhao, Y. Openforcefield/Openff-Toolkit: 0.16.0 Minor Feature and Bugfix Release, 2024. https://doi.org/10.5281/zenodo.10967071.
+
 Wan, B.; Andhariya, J. V.; Bao, Q.; Wang, Y.; Zou, Y.; Burgess, D. J. Effect of Polymer Source on in Vitro Drug Release from PLGA Microspheres. International Journal of Pharmaceutics 2021, 607, 120907. https://doi.org/10.1016/j.ijpharm.2021.120907.
+
 Wang, L.; Behara, P. K.; Thompson, M. W.; Gokey, T.; Wang, Y.; Wagner, J. R.; Cole, D. J.; Gilson, M. K.; Shirts, M. R.; Mobley, D. L. The Open Force Field Initiative: Open Software and Open Science for Molecular Modeling. J. Phys. Chem. B 2024, 128 (29), 7043–7067. https://doi.org/10.1021/acs.jpcb.4c01558.
 
