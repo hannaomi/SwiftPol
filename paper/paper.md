@@ -60,7 +60,7 @@ A full example implementation of SwiftPol for building PLGA systems can be found
 We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA ester-terminated PLGA. Following the chain build, another SwiftPol function was used to calculate the appropriate box size for the unit cell, number of water molecules, NaCl molecules, and residual monomer molecules to include in the complete condensed polymer ensemble.
 The input values for the SwiftPol builder, seen in \autoref{tab:Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
 
-[Input parameters for SwiftPol polymer builder function, for the building of product X.]\label{tab:Table 1}
+
 
 \begin{flushleft}
 \begin{table}[h!]
