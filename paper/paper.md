@@ -1,5 +1,5 @@
 --- 
-title: 'SwiftPol: A Python package for building and parameterizing <i>in silico<i> polymer systems'
+title: SwiftPol: A Python package for building and parameterizing <i>in silico<i> polymer systems
 tags: 
   - Python 
   - polymer 
@@ -34,12 +34,14 @@ Polymer MD studies showcase an assortment of approaches to manually incorporate 
 Open-source software packages designed to build *in silico* polymer chains are focused on the design of polymers at the monomer and single-chain scale [@davel_parameterization_2024; @klein_hierarchical_2016; @santana-bonilla_modular_2023]. However, there is not currently a software package available that integrates these smaller-scale characteristics into computational polymer models, whilst effectively capturing the heterogeneity and polydispersity of real-life samples. The development of SwiftPol was driven by the need to fill this gap in multi-scale building functionality of existing polymer building packages, to enable the simulation of realistic polymer models.
 Here, we will detail the development of SwiftPol - a user-guided Python tool for building representative polymer ensembles, and subsequent studies to show its relevance and performance. 
 
-SwiftPol uses open-source Python libraries RDkit, OpenFF-interchange, and OpenFF-toolkit to promote reproducibility and portability [@landrum_rdkitrdkit_2024; @thompson_openff_2024; @wagner_openforcefieldopenff-toolkit_2024; @wang_open_2024].  We have ensured that SwiftPol can be seamlessly integrated into existing open-source software built for parameterization and simulation, to allow the user to select their preferred force field, topology format, and engine.
+SwiftPol uses open-source Python libraries RDkit, OpenFF-interchange, and OpenFF-toolkit to promote reproducibility and portability [@landrum_rdkitrdkit_2024; @thompson_openff_2024; @wagner_openforcefieldopenff-toolkit_2024; @wang_open_2024].  We have ensured that SwiftPol objects can be seamlessly integrated into existing open-source software built for parameterization and simulation, to allow the user to select their preferred force field, topology format, and engine. RDkit, OpenFF-interchange and OpenFF-toolkit enable the export of SwiftPol polymer ensembles directly to simulation engines, and to a range of MD-compatible file formats, including .PDB, .TOP, .PRMTOP, and .JSON.
+
+Here, we will detail the development of SwiftPol - a user-guided Python tool for building representative polymer ensembles, and subsequent studies to show its relevance and performance. 
 
 
 # Package Overview 
 
-The SwiftPol build module contains Python functions to build both single polymer chains and polydisperse polymer chain ensembles. 
+The SwiftPol `build` module contains Python functions to build both single polymer chains and polydisperse polymer chain ensembles. 
 
 SwiftPol takes as an input the simplified molecular-input line-entry system (SMILES) string of all co-monomers, as well as values representing the target average properties of the ensemble: monomer % composition (for copolymers), length, number of chains, blockiness (for blocky copolymers), terminals, residual monomer. The user must define the reaction SMARTS which describes the polymerization reaction associated with their polymer chemistry. 
 
