@@ -1,5 +1,5 @@
 --- 
-title: 'SwiftPol: A Python package for building and parameterizing <i>in silico<i> polymer systems'
+title: 'SwiftPol: A Python package for building and parameterizing *in silico* polymer systems'
 tags: 
   - Python 
   - polymer 
@@ -14,7 +14,7 @@ authors:
     orcid: 0000-0002-9852-3154
     affiliation: 1 
 affiliations: 
- - name: Department of Chemistry, King’s College London 
+ - name: Department of Chemistry, King’s College London Strand Campus, East Wing, 33-41 Surrey St, London, WC2R 2ND 
    index: 1 
    ror: 0220mzb33
 
@@ -34,7 +34,7 @@ Polymer MD studies showcase an assortment of approaches to manually incorporate 
 Open-source software packages designed to build *in silico* polymer chains are focused on the design of polymers at the monomer and single-chain scale [@davel_parameterization_2024; @klein_hierarchical_2016; @santana-bonilla_modular_2023]. However, there is not currently a software package available that integrates these smaller-scale characteristics into computational polymer models, whilst effectively capturing the heterogeneity and polydispersity of real-life samples. The development of SwiftPol was driven by the need to fill this gap in multi-scale building functionality of existing polymer building packages, to enable the simulation of realistic polymer models.
 Here, we will detail the development of SwiftPol - a user-guided Python tool for building representative polymer ensembles, and subsequent studies to show its relevance and performance. 
 
-SwiftPol uses open-source Python libraries RDkit, OpenFF-interchange, and OpenFF-toolkit to promote reproducibility and portability [@landrum_rdkitrdkit_2024; @thompson_openff_2024; @wagner_openforcefieldopenff-toolkit_2024; @wang_open_2024].  We have ensured that SwiftPol objects can be seamlessly integrated into existing open-source software built for parameterization and simulation, to allow the user to select their preferred force field, topology format, and engine. RDkit, OpenFF-interchange and OpenFF-toolkit enable the export of SwiftPol polymer ensembles directly to simulation engines, and to a range of MD-compatible file formats, including .PDB, .TOP, .PRMTOP, and .JSON.
+SwiftPol uses open-source Python libraries RDkit, OpenFF-interchange, and OpenFF-toolkit to promote reproducibility and portability [@landrum_rdkitrdkit_2024; @thompson_openff_2024; @wagner_openforcefieldopenff-toolkit_2024; @wang_open_2024].  We have ensured that SwiftPol objects can be seamlessly integrated into existing open-source software built for parameterization and simulation, to allow the user to select their preferred force field, topology format, and engine. RDkit, OpenFF-interchange and OpenFF-toolkit enable the export of SwiftPol polymer ensembles directly to simulation engines, and to a range of MD-compatible file formats, including .pdb, .top, .prmtop, and .json.
 
 Here, we will detail the development of SwiftPol - a user-guided Python tool for building representative polymer ensembles, and subsequent studies to show its relevance and performance. 
 
@@ -60,7 +60,7 @@ SwiftPol also contains functions to generate conformers using RDkit or OpenEye (
 Using SwiftPol, we have successfully constructed polydisperse ensembles of poly(lactide-co-glycolide) (PLGA), a widely used biodegradable polymer. We used the molecular structures and properties of experimental PLGA products as input for SwiftPol building functions to create representative PLGA systems to be used for molecular dynamics simulations. By integrating experimental data, such as chain terminals, copolymer ratios of lactic and glycolic acid, and blockiness, we have been able to replicate the bulk characteristics of various commercial polymer products, namely polydispersity. 
 A full example implementation of SwiftPol for building PLGA systems can be found in the [building a PLGA system example notebook.](Example_Notebooks/PLGA_demo.ipynb)
 We used SwiftPol to build ‘product X’, a commercially available 75:25 LA:GA ester-terminated PLGA. Following the chain build, another SwiftPol function was used to calculate the appropriate box size for the unit cell, number of water molecules, NaCl molecules, and residual monomer molecules to include in the complete condensed polymer ensemble.
-The input values for the SwiftPol builder, seen in \autoref{tab:Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022].
+The input values for the SwiftPol builder, seen in \autoref{tab:Table 1}, were taken from quality assurance documents provided by the manufacturer of product X, except the value for blockiness which was measured experimentally by Sun et al [@sun_characterization_2022]. The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{tab:Table 2}.
 
 
 
@@ -86,8 +86,6 @@ NACL CONCENTRATION (M) & 0.1 \\
 \end{table}
 \end{flushleft}
 
-
-The system attributes assigned by SwiftPol to the completed condensed PLGA unit cell are in seen in \autoref{tab:Table 2},
 
 
 \begin{flushleft}
@@ -130,34 +128,34 @@ broader selection of solvation buffers.
 
 SwiftPol uses the following expressions to define key polymer properties. 
 
-Monomer ratio, *R~m*, is the ratio of monomer A to monomer B in an AB copolymer, shown in \autoref{equation 1} 
+`Monomer ratio, *R~m~*`, is the ratio of monomer A to monomer B in an AB copolymer, shown in \autoref{equation 1} 
 
 \begin{equation}\label{equation 1} 
 \mathit{R_{m}} = \frac{n(A)}{n(A+B)} 
 \end{equation} 
 
-Degree of polymerization, DOP, is the mean polymer chain length in the system, shown in \autoref{equation 2}. 
+`Degree of polymerization, DOP`, is the mean polymer chain length in the system, shown in \autoref{equation 2}. 
 
 \begin{equation}\label{equation 2} 
 DOP = \overline{x}(nA+nB) 
 \end{equation} 
 
-Number of chains, n~chains, is the total number of chains built by SwiftPol and appended to the object, shown in \autoref{equation 3}. 
+`Number of chains, n~chains~`, is the total number of chains built by SwiftPol and appended to the object, shown in \autoref{equation 3}. 
 
 \begin{equation}\label{equation 3} 
-n_{chains} = total\,number\,of\,chains\,built 
+n_{chains} = \mbox{total number of chains built }
 \end{equation} 
 
-Blockiness, *b*, is a measurement of the distribution of monomers in an AB copolymer, shown in \autoref{equation 4}. 
+`Blockiness, *b*`, is a measurement of the distribution of monomers in an AB copolymer, shown in \autoref{equation 4}. 
 
 \begin{equation}\label{equation 4} 
 \mathit{b} = \frac{nB-B\,bonds}{nA-B\,bonds} 
 \end{equation} 
 
-Residual monomer, *M~resid*, is the % of residual monomer molecules in the system, shown in \autoref{equation 5}. 
+`Residual monomer, *M~resid~*`, is the % of residual monomer molecules in the system, shown in \autoref{equation 5}. 
 
 \begin{equation}\label{equation 5} 
-\mathit{M_{resid}} = \frac{M_{w}(M_(resid))}{M_{w}(Carbon-containing\,compounds)} 
+\mathit{M_{resid}} = \frac{M_{w}(M_(resid))}{M_{w}(\mbox{Carbon-containing compounds})} 
 \end{equation} 
 
 # Acknowledgements 
