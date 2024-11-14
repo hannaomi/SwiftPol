@@ -128,34 +128,34 @@ broader selection of solvation buffers.
 
 SwiftPol uses the following expressions to define key polymer properties. 
 
-`Monomer ratio, *R~m~*`, is the ratio of monomer A to monomer B in an AB copolymer, shown in \autoref{equation 1} 
+`Monomer ratio`, *R~m~*, is the ratio of monomer A to monomer B in an AB copolymer, shown in \autoref{equation 1} 
 
 \begin{equation}\label{equation 1} 
 \mathit{R_{m}} = \frac{n(A)}{n(A+B)} 
 \end{equation} 
 
-`Degree of polymerization, DOP`, is the mean polymer chain length in the system, shown in \autoref{equation 2}. 
+`Degree of polymerization`, *DOP*, is the mean polymer chain length in the system, shown in \autoref{equation 2}. 
 
 \begin{equation}\label{equation 2} 
 DOP = \overline{x}(nA+nB) 
 \end{equation} 
 
-`Number of chains, n~chains~`, is the total number of chains built by SwiftPol and appended to the object, shown in \autoref{equation 3}. 
+`Number of chains`, *n~chains~*, is the total number of chains built by SwiftPol and appended to the object, shown in \autoref{equation 3}. 
 
 \begin{equation}\label{equation 3} 
-n_{chains} = \mbox{total number of chains built }
+n_{chains} = \mbox{total number of chains built}
 \end{equation} 
 
-`Blockiness, *b*`, is a measurement of the distribution of monomers in an AB copolymer, shown in \autoref{equation 4}. 
+`Blockiness`, *b*, is a measurement of the distribution of monomers in an AB copolymer, shown in \autoref{equation 4}. 
 
 \begin{equation}\label{equation 4} 
-\mathit{b} = \frac{nB-B\,bonds}{nA-B\,bonds} 
+\mathit{b} = \frac{nB-B \mbox{bonds}}{nA-B \mbox{bonds}} 
 \end{equation} 
 
 `Residual monomer, *M~resid~*`, is the % of residual monomer molecules in the system, shown in \autoref{equation 5}. 
 
 \begin{equation}\label{equation 5} 
-\mathit{M_{resid}} = \frac{M_{w}(M_(resid))}{M_{w}(\mbox{Carbon-containing compounds})} 
+\mathit{M_{resid}} = \frac{M_{w}(\mbox{resid})}{M_{w}(\mbox{Carbon-containing compounds})} 
 \end{equation} 
 
 # Acknowledgements 
