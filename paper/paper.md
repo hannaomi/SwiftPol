@@ -152,7 +152,7 @@ n_{chains} = \mbox{total number of chains built}
 \mathit{b} = \frac{nB-B \mbox{bonds}}{nA-B \mbox{bonds}} 
 \end{equation} 
 
-`Residual monomer, *M~resid~*`, is the % of residual monomer molecules in the system, shown in \autoref{equation 5}. 
+`Residual monomer`, *M~resid~*, is the % of residual monomer molecules in the system, shown in \autoref{equation 5}. 
 
 \begin{equation}\label{equation 5} 
 \mathit{M_{resid}} = \frac{M_{w}(\mbox{resid})}{M_{w}(\mbox{Carbon-containing compounds})} 
