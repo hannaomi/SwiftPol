@@ -121,8 +121,7 @@ We determined whether SwiftPol can build polymer ensembles and chains with sizes
 
 We presented SwiftPol, an open-source Python package for building polydisperse *in silico* polymer ensembles. SwiftPol recreates core characteristics of bulk polymer materials like polydispersity, creating representative systems that capture key components of polymer physics. We have shown that building longer chains and larger systems, exceeding what would be appropriate for atomistic MD, will not create a time bottleneck in the MD workflow. SwiftPol is a robust and scalable tool for the guided generation of polydisperse polymer mixtures, which can be easily integrated into existing open-source MD software, such as the OpenFF toolkit.
 
-In future releases, we will expand SwiftPol to include options to control tacticity, and offer a
-broader selection of solvation buffers.
+In future releases, we will expand SwiftPol to include options to control tacticity, and offer a broader selection of solvation buffers.
 
 # Defining Polymer Properties 
 
@@ -149,7 +148,7 @@ n_{chains} = \mbox{total number of chains built}
 `Blockiness`, *b*, is a measurement of the distribution of monomers in an AB copolymer, shown in \autoref{equation 4}. 
 
 \begin{equation}\label{equation 4} 
-\mathit{b} = \frac{nB-B \mbox{bonds}}{nA-B \mbox{bonds}} 
+\mathit{b} = \frac{nB-B\,\mbox{bonds}}{nA-B\,\mbox{bonds}} 
 \end{equation} 
 
 `Residual monomer`, *M~resid~*, is the % of residual monomer molecules in the system, shown in \autoref{equation 5}. 
